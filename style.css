@@ -64,6 +64,11 @@ img {
   margin-left: 0px;
 }
 
+.active .player-name, 
+.active .player-score { 
+  color: rgba(240, 72, 79, 0.6); 
+}
+
 .player-2-side {
   float: right;
 }
@@ -119,6 +124,8 @@ ion-button {
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+  transition-duration: 0.4s;
+  overflow: hidden;
 }
 
 ion-icon {
@@ -127,7 +134,7 @@ ion-icon {
 }
 
 ion-button:active {
-  
+  transform: scale(0.98);
 }
 
 ion-button:hover,
@@ -136,7 +143,28 @@ ion-button:focus {
   --background: black;
 }
 
+ion-button:after {
+  content: "";
+  background: white;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+ion-button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
 .btn-new {
+  top: 48px;
 }
 
 .btn-roll {
